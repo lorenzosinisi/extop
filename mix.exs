@@ -1,6 +1,6 @@
 defmodule Extop.MixProject do
   use Mix.Project
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
@@ -33,7 +33,7 @@ defmodule Extop.MixProject do
       files: ["lib", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Lorenzo Sinisi"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/lorenzosinisi/htop"}
+      links: %{"GitHub" => "https://github.com/lorenzosinisi/extop"}
     ]
   end
 
