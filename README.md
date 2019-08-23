@@ -1,24 +1,24 @@
-# HTOP for Elixir 
+# Extop - htop for Elixir
 
-An interactive process inspector for Elixir. It helps you: 
+An interactive process inspector for Elixir. It helps you:
 
 - monitor the most CPU intensive job
-- trace a process 
+- trace a process
 
 This project is inspired by `htop` for Unix and borros the initial code for inspection and tracing from [sasa1977/demo_system](https://github.com/sasa1977/demo_system).
 
-### Main functions 
+### Main functions
 
 In order to get the PID of the processes ordered by CPU usage, you can call Htop.top
 
 ```
-Htop.top()
+Extop.top()
 ```
 
 If you want to trace a process with Htop use
 
 ```
-Htop.trace(pid)
+Extop.trace(pid)
 ```
 
 ## Roadmap
@@ -29,12 +29,12 @@ Htop.trace(pid)
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `htop` to your list of dependencies in `mix.exs`:
+by adding `extop` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:htop, "~> 0.1.0"}
+    {:extop, "~> 0.1.0"}
   ]
 end
 ```

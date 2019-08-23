@@ -1,11 +1,11 @@
-defmodule Htop do
+defmodule Extop do
   use GenServer, start: {__MODULE__, :start_link, []}
 
   def start_link(), do: GenServer.start_link(__MODULE__, nil, name: __MODULE__)
 
   def load(), do: get_value(:current_load)
 
-  defdelegate subscribe_to_stats(), to: Htop.Stats, as: :subscribe
+  defdelegate subscribe_to_stats(), to: Extop.Stats, as: :subscribe
 
   def change_load(desired_load) do
     current_load = load()
@@ -60,14 +60,14 @@ defmodule Htop do
 
   defp start_worker({worker_id, target_node}) do
     if target_node == node() do
-      Htop.Workers.start_worker(worker_id)
+      Extop.Workers.start_worker(worker_id)
     else
-      :rpc.cast(target_node, Htop.Workers, :start_worker, [worker_id])
+      :rpc.cast(target_node, Extop.Workers, :start_worker, [worker_id])
     end
   end
 
   def top(time \\ :timer.seconds(1)) do
-    wall_times = Htop.SchedulerMonitor.wall_times()
+    wall_times = Extop.SchedulerMonitor.wall_times()
     initial_processes = processes()
 
     Process.sleep(time)
@@ -82,7 +82,7 @@ defmodule Htop do
       )
 
     schedulers_usage =
-      Htop.SchedulerMonitor.usage(wall_times) / :erlang.system_info(:schedulers_online)
+      Extop.SchedulerMonitor.usage(wall_times) / :erlang.system_info(:schedulers_online)
 
     total_reds_delta = final_processes |> Stream.map(& &1.reds) |> Enum.sum()
 

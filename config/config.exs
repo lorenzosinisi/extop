@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :htop, key: :value
+#     config :extop, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:htop, :key)
+#     Application.get_env(:extop, :key)
 #
 # You can also configure a third-party app:
 #

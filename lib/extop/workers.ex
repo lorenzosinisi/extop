@@ -1,4 +1,4 @@
-defmodule Htop.Workers do
+defmodule Extop.Workers do
   require Logger
 
   @shards 1000
@@ -20,7 +20,7 @@ defmodule Htop.Workers do
       Supervisor.Spec.supervisor(
         Supervisor,
         [
-          [Htop.Worker],
+          [Extop.Worker],
           [
             strategy: :simple_one_for_one,
             name: supervisor_name(id),

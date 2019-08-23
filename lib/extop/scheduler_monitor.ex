@@ -1,4 +1,4 @@
-defmodule Htop.SchedulerMonitor do
+defmodule Extop.SchedulerMonitor do
   use GenServer, start: {__MODULE__, :start_link, []}
 
   def start_link(), do: GenServer.start_link(__MODULE__, nil, name: __MODULE__)
@@ -11,7 +11,7 @@ defmodule Htop.SchedulerMonitor do
 
   def handle_info(:calc_stats, previous_times) do
     enqueue_next()
-    Htop.Stats.schedulers_usage(usage(previous_times))
+    Extop.Stats.schedulers_usage(usage(previous_times))
     {:noreply, wall_times()}
   end
 

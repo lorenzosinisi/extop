@@ -1,8 +1,8 @@
-defmodule Htop.Worker do
+defmodule Extop.Worker do
   def start_link(id),
     do:
       Task.start_link(fn ->
-        Htop.join_worker()
+        Extop.join_worker()
 
         try do
           :timer.sleep(:rand.uniform(1000))
@@ -13,11 +13,11 @@ defmodule Htop.Worker do
       end)
 
   defp loop(id) do
-    if id <= Htop.load() do
+    if id <= Extop.load() do
       if :rand.uniform() < Htop.failure_rate(), do: raise("some error")
 
       _ = Enum.reduce(1..50, 0, &(&1 + &2))
-      Htop.Stats.job_processed()
+      Extop.Stats.job_processed()
       :erlang.garbage_collect()
       :timer.sleep(1000)
       loop(id)

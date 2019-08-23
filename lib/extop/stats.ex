@@ -1,4 +1,4 @@
-defmodule Htop.Stats do
+defmodule Extop.Stats do
   use GenServer, start: {__MODULE__, :start_link, []}
 
   def start_link(), do: GenServer.start_link(__MODULE__, nil, name: __MODULE__)
@@ -27,7 +27,7 @@ defmodule Htop.Stats do
       jobs_rate: jobs_rate(state.start),
       schedulers_usage: value(:schedulers_usage),
       memory_usage: div(:erlang.memory(:total), 1024 * 1024),
-      workers_count: Htop.workers_count(),
+      workers_count: Extop.workers_count(),
       scheduler_count: :erlang.system_info(:schedulers_online)
     }
 

@@ -1,14 +1,14 @@
-defmodule Htop.MixProject do
+defmodule Extop.MixProject do
   use Mix.Project
   @version "0.1.0"
 
   def project do
     [
-      app: :htop,
+      app: :extop,
       version: @version,
-      elixir: "~> 1.9",
+      elixir: "~> 1.8",
       docs: [extras: ["README.md"], main: "readme", source_ref: "v#{@version}"],
-      source_url: "https://github.com/lorenzosinisi/htop",
+      source_url: "https://github.com/lorenzosinisi/extop",
       description: description(),
       package: package(),
       deps: deps()
@@ -24,7 +24,7 @@ defmodule Htop.MixProject do
 
   defp description do
     """
-    Htop for Elixir.
+    Extop - htop for Elixir. Tracing and monitoring of processes made easy
     """
   end
 
@@ -41,7 +41,7 @@ defmodule Htop.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Htop.Application, []}
+      mod: {Extop.Application, []}
     ]
   end
 end
