@@ -5,7 +5,7 @@ An interactive process inspector for Elixir. It helps you:
 - monitor the most CPU intensive job
 - trace a process
 
-This project is inspired by `htop` for Unix and borros the initial code for inspection and tracing from [sasa1977/demo_system](https://github.com/sasa1977/demo_system).
+This project is inspired by `htop` for Unix and borros the initial code for inspection and tracing from [sasa1977/demo_system](https://github.com/sasa1977/demo_system) (Thanks Sasa!).
 
 ### Main functions
 
