@@ -41,7 +41,7 @@ end
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/htop](https://hexdocs.pm/htop).
+be found at [https://hexdocs.pm/extop](https://hexdocs.pm/extop).
 
 ### License
 
